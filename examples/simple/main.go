@@ -16,7 +16,7 @@ func main() {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
 
-	s := smtptester.Standard()
+	s := smtptester.StandardWithAddress(":2525")
 
 	go func() {
 		if err := s.ListenAndServe(ctx); err != nil {
@@ -25,7 +25,7 @@ func main() {
 	}()
 
 	defer func() {
-		if err := s.Close(ctx); err != nil {
+		if err := s.Close(); err != nil {
 			slog.Error("error closing server", slog.Any("error", err))
 		}
 	}()
@@ -37,7 +37,7 @@ func main() {
 	from := "alice@i.com"
 	to := []string{"bob@e.com", "mal@b.com"}
 	msg := []byte("Test\r\n")
-	if err := smtp.SendMail(s.Address(), nil, from, to, msg); err != nil {
+	if err := smtp.SendMail("[::1]:2525", nil, from, to, msg); err != nil {
 		panic(err)
 	}
 

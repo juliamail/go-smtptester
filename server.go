@@ -23,7 +23,7 @@ import (
 
 // Standard returns a standard SMTP server listening on :2525
 func Standard() *server.Server {
-	return server.NewServer(
+	return server.New(
 		server.WithAddr(":2525"),
 		server.WithReadTimeout(10*time.Second),
 		server.WithWriteTimeout(10*time.Second),
@@ -35,7 +35,7 @@ func Standard() *server.Server {
 
 // StandardWithAddress with address returns a standard SMTP server listenting on addr.
 func StandardWithAddress(addr string) *server.Server {
-	return server.NewServer(
+	return server.New(
 		server.WithAddr(addr),
 		server.WithReadTimeout(10*time.Second),
 		server.WithWriteTimeout(10*time.Second),

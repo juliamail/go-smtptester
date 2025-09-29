@@ -20,6 +20,8 @@ github.com/uponusolutions/go-sasl v0.0.1 h1:6nXh3ograzbLPbEQYh0kICIO7K9vL20BPntz
 github.com/uponusolutions/go-sasl v0.0.1/go.mod h1:k/28+Atkirfr4rcoti4ay1zA9K0tymiDuiDHsxRf8MQ=
 github.com/uponusolutions/go-smtp v0.0.20 h1:JyOS9ty/W3IW3/xkUWXh7uNcjBYMnyVu0xEmKB0eyKk=
 github.com/uponusolutions/go-smtp v0.0.20/go.mod h1:LzemocXPPKzs+vL1nBX0ZmlP4rTxOHrsV0RhkEDFXEg=
+github.com/uponusolutions/go-smtp v0.4.0 h1:fJmpiY0c43lmviiq4Jc0PvPJVUoI9XcwZppZfIofr1s=
+github.com/uponusolutions/go-smtp v0.4.0/go.mod h1:yE2FKIHr7KoCy30M3S7AaSpz+wQAYLlsYfCt9rDTA8M=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c h1:Hei/4ADfdWqJk1ZMxUNpqntNwaWcugrBjAiHlqqRiVk=
 gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c/go.mod h1:JHkPIbrfpd72SG/EVd6muEfDQjcINNoR0C8j2r3qZ4Q=

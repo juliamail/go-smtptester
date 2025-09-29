@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-var srv = Standard()
+var srv = StandardWithAddress(":2525")
 
 func TestMain(m *testing.M) {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
@@ -31,7 +31,7 @@ func TestMain(m *testing.M) {
 
 	exitVal := m.Run()
 
-	if err := srv.Close(ctx); err != nil {
+	if err := srv.Close(); err != nil {
 		slog.Error("error closing server", slog.Any("error", err))
 	}
 
@@ -59,7 +59,7 @@ func TestSendMail(t *testing.T) {
 	data := []byte("Test mail\r\n")
 
 	// Send without TLS.
-	require.Nil(t, s.SendMail(srv.Address(), nil, from, recipients, data))
+	require.Nil(t, s.SendMail("[::1]:2525", nil, from, recipients, data))
 
 	m, found := GetBackend(srv).Load(from, recipients)
 	assert.True(t, found)
